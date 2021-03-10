@@ -35,8 +35,12 @@ class Thermostat{
     this.temp -= 1
   }
 
-  powerSavingSwitch(){
-    this.powerSavingMode === true ? this.powerSavingMode = false : this.powerSavingMode = true;
+  powerSavingSwitchOn(){
+    this.powerSavingMode = true
+  }
+
+  powerSavingSwitchOff(){
+    this.powerSavingMode = false
   }
 
   isPowerSavingModeOn() {
