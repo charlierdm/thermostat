@@ -27,10 +27,18 @@ $(document).ready(function(){
     $('#power-saving-status').text('off');
   })
 
+  $.ajax({url: "http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=a5b3bae99948c408ffcd3eb416f730ab", success: function(result){
+      console.log(result.main.temp);
+        $('#outsidetemp').text(result.main.temp);
+        $('#city').text(result.name);
+    }});
+
+
+
   function updateTemperature() {
     $('#temperature').text(thermostat.temp);
     $('#temperature').attr('class', thermostat.energyUsage());
-  
+
   }
 
 });
