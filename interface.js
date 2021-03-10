@@ -7,11 +7,18 @@ $(document).ready(function(){
     $('#temperature').attr('class', thermostat.energyUsage());
   }
 
-  $.get({url: "http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=7e0e42249f88f6b7a06e50b513a8fc55", success: function(result){
+  $.get("http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=7e0e42249f88f6b7a06e50b513a8fc55", function(result) {
     console.log(result.main.temp);
-      $('#outsidetemp').text(result.main.temp);
-      $('#city').text(result.name);
-  }});
+      $('#current-temp').text(result.main.temp);
+      $('#current-city').text(result.name)
+  });
+
+  $('#current-city').change(function() {
+    var city = $('#current-city').val();
+    $.get("http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=7e0e42249f88f6b7a06e50b513a8fc55", function(result) {
+    $('#current-temp').text(result.main.temp);
+    })
+  })
 
   $('#temperature-up').on('click', function(){
     thermostat.up();

@@ -17,8 +17,18 @@
         <button id="powersaving-off">PSM off</button>
       </p>
 
-      <h2 id='outside'>The weather in <span id='city'></span> is <span id='outsidetemp'></span></h2>
+      <h2>The temperature in <span id='current-city'></span> is: <span id='current-temp'></span></h2>
+
+        <select id='current-city'>
+          <option value=''>--Choose a City--</option>
+          <option value='London'>London</option>
+          <option value='Munich'>Munich</option>
+          <option value='Warsaw'>Warsaw</option>
+          <option value='Valencia'>Valencia</option>
+        </select>
+  
     </section>
+
 
     <script src="src/Thermostat.js"></script>
     <script src="jquery.js"></script>
