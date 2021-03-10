@@ -44,7 +44,7 @@ describe("Thermostat", function() {
 
   describe('when power saving mode is off', function() {
     it('has a maximum temperature of 32 degrees', function() {
-      thermostat.powerSavingSwitch();
+      thermostat.powerSavingSwitchOff();
       for (var i = 0; i < 13; i++) {
         thermostat.up();
       }
